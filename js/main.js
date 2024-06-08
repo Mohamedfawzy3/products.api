@@ -99,7 +99,8 @@ document.querySelector(".sign_up form").addEventListener("submit", (e) => {
     localStorage.setItem(`user.${user_name.value}`, JSON.stringify(user));
     i++;
     last_value = i;
-    window.open("../allproducts.html", "", "");
+    window.open("../allProducts.html")
+    console.log("done")
   } else {
     e.preventDefault();
     console.log("dibliing", signup_but, user_name.nextElementSibling);
