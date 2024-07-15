@@ -68,6 +68,7 @@ let last_value = localStorage.getItem("last_value") || 0;
 
 //  ---------- sign up cheack---------
 document.querySelector(".sign_up form").addEventListener("submit", (e) => {
+  e.preventDefault();
   console.log(
     check_input(user_name),
     check_input(user_email),
@@ -79,7 +80,7 @@ document.querySelector(".sign_up form").addEventListener("submit", (e) => {
     check_input(user_email) === false ||
     check_input(user_pass) === false
   ) {
-    e.preventDefault();
+   
     console.log("lllllllllllll");
   } else if (
     check_input(user_name) &&
@@ -100,10 +101,10 @@ document.querySelector(".sign_up form").addEventListener("submit", (e) => {
     i++;
     last_value = i;
     // window.open("../allProducts.html")
-    let currentPath = window.location.pathname;
-    let newPath = currentPath + "allProducts.html"; 
-    window.location.href = newPath;
-   
+  
+  let currentPath = window.location.pathname;
+  let newPath = currentPath.endsWith("/") ? currentPath + "allProducts.html" : currentPath + "/allProducts.html";
+  window.location.href = newPath;
     console.log("done")
   } else {
     e.preventDefault();
