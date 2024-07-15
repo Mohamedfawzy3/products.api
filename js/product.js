@@ -39,15 +39,15 @@ xhr.onreadystatechange = () => {
     product.append(rate);
 // this another method under testing to put css style
     cont.appendChild(product);
-    for (let i in productAllDetails) {
-      if (i === "images" || i === "id" || i === "thumbnail") {
-        console.log("iamge");
-        continue;
-      }
-      let element = document.createElement("div");
-      element.innerText = `${i}: ${productAllDetails[i]}`;
-      document.body.append(element);
-    }
+    // for (let i in productAllDetails) {
+    //   if (i === "images" || i === "id" || i === "thumbnail") {
+    //     console.log("iamge");
+    //     continue;
+    //   }
+    //   let element = document.createElement("div");
+    //   element.innerText = `${i}: ${productAllDetails[i]}`;
+    //   document.body.append(element);
+    // }
   }
 };
 document.querySelector("button").addEventListener("click", () => {

@@ -176,3 +176,14 @@
     width: 100%
   }
 }
+/* --------------Product details */
+#product{
+padding: 20px;
+}
+#product .cont{
+
+}
+#product .cont img{
+  width: 100%;
+  height: 500px;
+}
