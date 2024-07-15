@@ -1,3 +1,5 @@
+let currentPath;
+let newPath 
 document.querySelector(".log_in form").addEventListener("submit", (e) => {
     e.preventDefault();
     console.log(check_input(user_name), check_input(user_pass));
@@ -16,7 +18,9 @@ document.querySelector(".log_in form").addEventListener("submit", (e) => {
         JSON.parse(localStorage.getItem(`user.${user_name.value}`)).pass ===
         user_pass.value
       ) {
-        window.location.href = "./allproducts.html";
+        currentPath = window.location.pathname;
+        newPath = currentPath.endsWith("/") ? currentPath + "allProducts.html" : currentPath + "/allProducts.html";
+        window.location.href = newPath;
       } else {
         user_pass.nextElementSibling.textContent = "Wrong passward";
       }
@@ -24,6 +28,8 @@ document.querySelector(".log_in form").addEventListener("submit", (e) => {
       JSON.parse(localStorage.getItem(`user.${user_name.value}`) == null) &&
       user_name.value.length != 0
     ) {
-      window.location.href = "./index.html";
+      newPath = currentPath.endsWith("/") ? currentPath + "index.html" : currentPath + "/index.html";
+      window.location.href = newPath;
+    
     }
   });
