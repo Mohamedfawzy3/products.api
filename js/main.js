@@ -99,7 +99,10 @@ document.querySelector(".sign_up form").addEventListener("submit", (e) => {
     localStorage.setItem(`user.${user_name.value}`, JSON.stringify(user));
     i++;
     last_value = i;
-    window.open("/allProducts.html")
+    // window.open("../allProducts.html")
+    let currentPath = window.location.pathname;
+    let newPath = currentPath + "allProducts.html"; 
+    window.location.href = newPath;
    
     console.log("done")
   } else {
